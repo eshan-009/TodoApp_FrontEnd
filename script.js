@@ -5,7 +5,7 @@ const lastname = document.getElementById("lastname")
 const email = document.getElementById("email")
 const password = document.getElementById("password")
 const confirmPassword = document.getElementById("confirmPassword")
-const baseUrl = `http://localhost:3000`
+const baseUrl = `https://todoapp-backend-wmsr.onrender.com`
 const registrationForm = document.querySelector(".registrationForm")
 const loginForm = document.querySelector(".loginForm")
 const createAccount = document.querySelector("[createAccount]");
@@ -14,7 +14,8 @@ const authPage = document.querySelector(".authPage")
 const addTodoButton = document.querySelector(".addTodoButton");
 const addTodoPage = document.querySelector(".addTodoPage")
 const jwtoken = localStorage.getItem("token")
-const logOutButton = document.querySelector(".logOutButton")
+const logOutButton = document.querySelector(".logOutButton");
+const empty = document.querySelector(".empty")
 createAccount.addEventListener("click",(e)=>{
     e.preventDefault();
     loginForm.classList.remove("active");
@@ -165,7 +166,10 @@ async function getTodos() {
     todoList.innerHTML = ''
     const data = await fetch(`${baseUrl}/api/todo/getTodo`);
     const TodoData = await data.json();
-   
+   if(TodoData.data.length==0)
+   {
+    empty.classList.add("active")
+   }
 let requiredData;
 
 if(currentTab === todayTab)
@@ -310,9 +314,7 @@ else if(currentTab === completedTab)
         actionParent.appendChild(deleteButton);
         actionParent.appendChild(completed)
        
-        // nameParent.appendChild(name)
-        // descriptionParent.appendChild(description1)
-        // dateParent.appendChild(dueDate1)
+      
 
         wrapper.appendChild(name)
         wrapper.appendChild(description1)

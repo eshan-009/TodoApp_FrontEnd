@@ -114,7 +114,6 @@ fieldset:focus-within {
 }
 
 .homescreen {
-  border: 2px solid green;
   height: 100vh;
   width: 100vw;
   flex-direction: column;
@@ -265,16 +264,31 @@ margin-top: 0.5rem;
     align-items: center;
     display: none;
 }
-
+.empty{
+  font-weight: bold;
+  margin-top: 8rem;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+  display: none;
+ align-items: center;
+}
 .active{
     display: flex;
    
 }
 
-@media (max-width:360px) {
+@media (max-width:440px) {
 
     .today,.upcoming,.completed,.pending{
-       font-size: 0.9rem;
+       font-size: 1rem;
     }
     
+}
+@media (max-width:370px) {
+
+  .today,.upcoming,.completed,.pending{
+     font-size: 0.8rem;
+  }
+  
 }
