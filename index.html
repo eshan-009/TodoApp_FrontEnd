@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <title>Todo</title>
+  </head>
+  <body>
+    <button class="logOutButton" onclick="logOut()">Log Out</button>
+    <div class="authPage">
+      <form class="registrationForm">
+        <h2 class="registrationFormHeading">Registraion Page</h2>
+        <div class="registrationFormData">
+          <fieldset>
+            <legend>Firstname</legend>
+            <input
+              type="text"
+              name="firstname"
+              id="firstname"
+              placeholder="e.g. Eshan"
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Lastname</legend>
+            <input
+              type="text"
+              name="lastname"
+              id="lastname"
+              placeholder="e.g. Sharma"
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Email</legend>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="e.g. eshansharma@apple.com"
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Password</legend>
+            <input type="password" name="password" id="password" />
+          </fieldset>
+
+          <fieldset>
+            <legend>Confirm Password</legend>
+            <input
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+            />
+          </fieldset>
+
+          <button class="registerButton">Register</button>
+        </div>
+      </form>
+
+      <form action="" class="loginForm">
+        <h2 class="loginFormHeading">Login Page</h2>
+        <div class="loginFormData">
+          <fieldset>
+            <legend>Email</legend>
+            <input
+              type="text"
+              name="email"
+              id="loginemail"
+              placeholder="e.g. eshansharma@apple.com"
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Password</legend>
+            <input type="password" name="password" id="loginpassword" />
+          </fieldset>
+
+          <div class="alternamelogin">
+            <button createAccount>Create Account</button>
+          </div>
+        </div>
+
+        <button class="loginButton">Login</button>
+      </form>
+    </div>
+
+    <div class="homescreen">
+        <h1 style="display: flex;justify-content: center;margin: 2rem;">My Tasks</h1>
+      <div class="tabs">
+        <div class="today" id="today">Today</div>
+        <div class="upcoming" id="upcoming">Upcoming</div>
+        <div class="completed" id="completed">Completed</div>
+        <div class="pending" id="pending">Pending</div>
+      </div>
+
+      <div class="todoList"></div>
+
+      <button class="addTodoButton">Add Todo</button>
+    </div>
+
+    <div class="addTodoPage">
+      <form action="" class="todoForm">
+        <div style="display: flex; justify-content: center; margin-top: 5rem; font-size: 3rem;">Todo Data</div>
+        <div class="todoFormData">
+          <fieldset>
+            <legend>Task Name</legend>
+            <input
+              type="text"
+              name="taskName"
+              id="todoTaskName"
+              placeholder="e.g. Bid Submission"
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Description</legend>
+            <input
+              type="text"
+              name="description"
+              id="tododescription"
+              placeholder="e.g. Submit final bid"
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Due Date</legend>
+            <input type="date" name="dueDate" id="dueDate" />
+          </fieldset>
+
+          <button class="createButton">Create Todo</button>
+          <button class="backButton" onclick="getTodos()">
+            <svg fill="#000000" height="30px" width="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 26.676 26.676" xml:space="preserve">
+<g>
+	<path d="M26.105,21.891c-0.229,0-0.439-0.131-0.529-0.346l0,0c-0.066-0.156-1.716-3.857-7.885-4.59
+		c-1.285-0.156-2.824-0.236-4.693-0.25v4.613c0,0.213-0.115,0.406-0.304,0.508c-0.188,0.098-0.413,0.084-0.588-0.033L0.254,13.815
+		C0.094,13.708,0,13.528,0,13.339c0-0.191,0.094-0.365,0.254-0.477l11.857-7.979c0.175-0.121,0.398-0.129,0.588-0.029
+		c0.19,0.102,0.303,0.295,0.303,0.502v4.293c2.578,0.336,13.674,2.33,13.674,11.674c0,0.271-0.191,0.508-0.459,0.562
+		C26.18,21.891,26.141,21.891,26.105,21.891z"/>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+</g>
+</svg>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,280 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+}
+
+
+
+.authPage {
+  height: 100vh;
+  width: 100vw;
+  display: none;
+}
+
+.registrationForm{
+    width: 500px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+  display: none;
+  }
+.todoForm {
+  width: 500px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+
+}
+.loginForm {
+  width: 500px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  display: none;
+}
+.alternamelogin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.alternamelogin>button{
+    all: unset;
+    color: #3a7ff9;
+}
+.registerButton,
+.loginButton,
+.createButton {
+  all: unset;
+  border: 1px solid rgb(245, 220, 75);
+  width: 300px;
+  margin: 0 auto;
+  height: 3rem;
+  background-color: rgb(245, 220, 75);
+  color: black;
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.registrationFormHeading,
+.loginFormHeading {
+  margin-top: 4rem;
+  align-self: center;
+  font-size: 4rem;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+}
+.registrationFormData,
+.loginFormData,
+.todoFormData {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+}
+
+input {
+  all: unset;
+  width: 93%;
+  transform: translateY(-5px);
+  padding: 0.5rem;
+  padding-right: 1rem;
+  font-size: 1.2rem;
+
+
+}
+legend {
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 1.5rem;
+}
+fieldset {
+    width: 100%;
+  color: rgb(64, 63, 63);
+  border: 1px solid rgb(64, 63, 63);
+}
+fieldset:focus-within {
+  color: #3ab6f9;
+  border: 1px solid #3ab6f9;
+}
+
+.homescreen {
+  border: 2px solid green;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  display: none;
+}
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  justify-content: space-evenly;
+  color: grey;
+  font-size: 1.2rem;
+}
+.addTodoButton {
+  all: unset;
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  border: 1px solid rgb(245, 220, 75);
+  background-color: rgb(245, 220, 75);
+  height: 3.5rem;
+  width: 8rem;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todoList {
+  font-size: 1.5rem;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 1.8rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+}
+.listparent {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  font-size: 1.2rem;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    border: 1px solid grey;
+    padding: 1rem;
+    
+}
+
+.buttonParent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+ 
+}
+.listitem {
+  list-style-type: none;
+  height: 3rem;
+margin-top: 0.5rem;
+}
+.actionParent{
+    display: flex;
+    align-items: center;
+   gap: 1rem;
+   margin: 0 auto;
+}
+.editButton{
+    all: unset;
+    border: 1px solid rgb(245, 220, 75);
+    background-color: rgb(245, 220, 75);
+    height: 1.6rem;
+    width: 3rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.deleteButton{
+    all: unset;
+    border: 1px solid rgb(245, 220, 75);
+    background-color: rgb(245, 220, 75);
+    height: 1.6rem;
+    width: 3.5rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.completedButton{
+    all: unset;
+    border: 1px solid rgb(245, 220, 75);
+    background-color: rgb(245, 220, 75);
+    height: 1.6rem;
+    width: 4.5rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.addTodoPage {
+  height: 100vh;
+  width: 100vw;
+  display: none;
+}
+
+
+.listheads{
+    list-style-type: none;
+    font-weight: bold;
+  padding-bottom: 1rem;
+
+}
+.activeTab{
+    scale: 1.5;
+    color: #2F1847;
+    font-weight: bold;
+}
+.today,.upcoming,.completed,.pending{
+    cursor: pointer;
+}
+.backButton{
+    all: unset;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    cursor: pointer;
+}
+.logOutButton{
+    all: unset;
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+    background-color: rgb(245, 220, 75);
+    border-radius: 2rem;
+    height: 1.6rem;
+    width: 5rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.active{
+    display: flex;
+   
+}
+
+@media (max-width:360px) {
+
+    .today,.upcoming,.completed,.pending{
+       font-size: 0.9rem;
+    }
+    
+}
