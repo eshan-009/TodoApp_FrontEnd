@@ -42,8 +42,8 @@ async function authenticate(){
         method :"GET",
         headers: {
            "Content-type": "application/json; charset=UTF-8",
-           "Access-Control-Allow-Origin": "https://eshan-009.github.io/",
-           "Access-Control-Allow-Credentials" : true,
+        //    "Access-Control-Allow-Origin": "https://eshan-009.github.io/",
+        //    "Access-Control-Allow-Credentials" : true,
           'Authorization': `Bearer ${jwtoken}`, 
         },
         credentials: 'include' ,
