@@ -16,6 +16,7 @@ const addTodoPage = document.querySelector(".addTodoPage")
 const jwtoken = localStorage.getItem("token")
 const logOutButton = document.querySelector(".logOutButton");
 const empty = document.querySelector(".empty")
+
 createAccount.addEventListener("click",(e)=>{
     e.preventDefault();
     loginForm.classList.remove("active");
@@ -40,7 +41,8 @@ async function authenticate(){
     const response = await fetch(URL,{
         method :"GET",
         headers: {
-          "Content-type": "application/json; charset=UTF-8",
+           "Content-type": "application/json; charset=UTF-8 Access-Control-Allow-Origin",
+        "Access-Control-Allow-Credentials" :  "true",
           'Authorization': `Bearer ${jwtoken}`, 
         },
         credentials: 'include' 
@@ -74,7 +76,8 @@ console.log("URL",URL)
           password:password.value
       }),
       headers: {
-        "Content-type": "application/json; charset=UTF-8"
+        "Content-type": "application/json; charset=UTF-8 Access-Control-Allow-Origin",
+        "Access-Control-Allow-Credentials" :  "true"
       }
     })
 if(response.status==200)
@@ -102,7 +105,9 @@ const URL = `${baseUrl}/api/auth/login`
           password:password.value
       }),
       headers: {
-        "Content-type": "application/json; charset=UTF-8"
+        "Content-type": "application/json; charset=UTF-8 Access-Control-Allow-Origin",
+        "Access-Control-Allow-Credentials" :  "true"
+       
       },
       credentials: 'include' 
     })
@@ -141,7 +146,8 @@ addTodoButton.addEventListener("click",(e)=>{
               dueDate:dueDate.value
           }),
           headers: {
-            "Content-type": "application/json; charset=UTF-8",
+          "Content-type": "application/json; charset=UTF-8 Access-Control-Allow-Origin",
+        "Access-Control-Allow-Credentials" :  "true",
             'Authorization': `Bearer ${jwtoken}`, 
           },
           credentials: 'include' 
@@ -247,7 +253,8 @@ else if(currentTab === completedTab)
                       dueDate:dueDate.value
                   }),
                   headers: {
-                    "Content-type": "application/json; charset=UTF-8",
+                    "Content-type": "application/json; charset=UTF-8 Access-Control-Allow-Origin",
+        "Access-Control-Allow-Credentials" :  "true",
                     'Authorization': `Bearer ${jwtoken}`, 
                   },
                   credentials: 'include' 
@@ -267,7 +274,8 @@ else if(currentTab === completedTab)
                   method :"DELETE",
                   
                   headers: {
-                    "Content-type": "application/json; charset=UTF-8",
+                 "Content-type": "application/json; charset=UTF-8 Access-Control-Allow-Origin",
+        "Access-Control-Allow-Credentials" :  "true",
                     'Authorization': `Bearer ${jwtoken}`, 
                   },
                   credentials: 'include' 
@@ -293,7 +301,8 @@ else if(currentTab === completedTab)
                         completed : true
                     }),
                     headers: {
-                      "Content-type": "application/json; charset=UTF-8",
+                    "Content-type": "application/json; charset=UTF-8 Access-Control-Allow-Origin",
+                      "Access-Control-Allow-Credentials" :  "true",
                       'Authorization': `Bearer ${jwtoken}`, 
                     },
                     credentials: 'include' 
