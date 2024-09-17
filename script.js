@@ -79,7 +79,7 @@ console.log("URL",URL)
           password:password.value
       }),
       headers: {
-        "Content-type": "application/json; charset=UTF-8 ; Access-Control-Allow-Origin",
+        "Content-type": "application/json; charset=UTF-8",
         // "Access-Control-Allow-Origin": "https://eshan-009.github.io/",
         // "Access-Control-Allow-Credentials" : true,
       }
@@ -109,7 +109,7 @@ const URL = `${baseUrl}/api/auth/login`
           password:password.value
       }),
       headers: {
-        "Content-type": "application/json; charset=UTF-8 ",
+        "Content-type": "application/json; charset=UTF-8",
         // "Access-Control-Allow-Origin": "https://eshan-009.github.io/",
         // "Access-Control-Allow-Credentials" : true,
        
@@ -154,9 +154,9 @@ addTodoButton.addEventListener("click",(e)=>{
               dueDate:dueDate.value
           }),
           headers: {
-          "Content-type": "application/json; charset=UTF-8 ; Access-Control-Allow-Origin ",
-          "Access-Control-Allow-Origin": "https://eshan-009.github.io/",
-          "Access-Control-Allow-Credentials" : true,
+          "Content-type": "application/json; charset=UTF-8 ",
+        //   "Access-Control-Allow-Origin": "https://eshan-009.github.io/",
+        //   "Access-Control-Allow-Credentials" : true,
             'Authorization': `Bearer ${jwtoken}`, 
           },
           credentials: 'include' 
