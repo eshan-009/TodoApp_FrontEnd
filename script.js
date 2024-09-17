@@ -54,7 +54,8 @@ async function authenticate(){
       {
         authPage.classList.remove("active");
         homescreen.classList.add("active");
-        logOutButton.classList.add("active")
+        logOutButton.classList.add("active");
+        getTodos();
         return true
       }
       return false
@@ -133,6 +134,10 @@ const data = await response.json();
 if(response.status==200)
 {
     localStorage.setItem("token",JSON.stringify(data.token));
+    var currentTab=upcomingTab;
+
+currentTab.classList.add("activeTab");
+getTodos()
 }
 
 })
@@ -356,13 +361,8 @@ const completedTab = document.getElementById("completed")
 const pendingTab = document.getElementById("pending");
 
 
-var currentTab=upcomingTab;
 
-currentTab.classList.add("activeTab");
-if(authenticate())
-{
-    getTodos()
-}
+
 function toggletabs(tab){
 
     console.log(currentTab,tab)
