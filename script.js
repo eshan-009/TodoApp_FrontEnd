@@ -55,7 +55,7 @@ async function authenticate(){
         authPage.classList.remove("active");
         homescreen.classList.add("active");
         logOutButton.classList.add("active");
-        getTodos();
+        await getTodos();
         return true
       }
       return false
@@ -137,7 +137,7 @@ if(response.status==200)
     var currentTab=upcomingTab;
 
 currentTab.classList.add("activeTab");
-getTodos()
+await getTodos()
 }
 
 })
@@ -289,16 +289,16 @@ else if(currentTab === completedTab)
                   method :"DELETE",
                   
                   headers: {
-                 "Content-type": "application/json; charset=UTF-8 ; Access-Control-Allow-Origin",
-                 "Access-Control-Allow-Origin": "https://eshan-009.github.io/",
-                 "Access-Control-Allow-Credentials" : true,
+                 "Content-type": "application/json; charset=UTF-8",
+                //  "Access-Control-Allow-Origin": "https://eshan-009.github.io/",
+                //  "Access-Control-Allow-Credentials" : true,
                     'Authorization': `Bearer ${jwtoken}`, 
                   },
                   credentials: 'include' 
                  
                 })
-                console.log("Here",await response.json())
-                getTodos()
+            
+                await getTodos()
                
         })
 
@@ -317,9 +317,9 @@ else if(currentTab === completedTab)
                         completed : true
                     }),
                     headers: {
-                    "Content-type": "application/json; charset=UTF-8 ; Access-Control-Allow-Origin",
-                    "Access-Control-Allow-Origin": "https://eshan-009.github.io/",
-                    "Access-Control-Allow-Credentials" : true,
+                    "Content-type": "application/json; charset=UTF-8",
+                    // "Access-Control-Allow-Origin": "https://eshan-009.github.io/",
+                    // "Access-Control-Allow-Credentials" : true,
                       'Authorization': `Bearer ${jwtoken}`, 
                     },
                     credentials: 'include' 
@@ -330,8 +330,8 @@ else if(currentTab === completedTab)
                
                 
                 
-                console.log("Here",await resspp.json())
-                getTodos()
+            
+                await getTodos()
         })
 
 
