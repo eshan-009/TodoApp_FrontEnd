@@ -41,14 +41,14 @@ async function authenticate(){
     const response = await fetch(URL,{
         method :"GET",
         headers: {
-           "Content-type": "application/json; charset=UTF-8 Access-Control-Allow-Origin",
-        "Access-Control-Allow-Credentials" :  "true",
+           "Content-type": "application/json; charset=UTF-8 ",
+           "Access-Control-Allow-Origin": "https://eshan-009.github.io/",
+           "Access-Control-Allow-Credentials" : true,
           'Authorization': `Bearer ${jwtoken}`, 
         },
         credentials: 'include' 
       })
       const responseData = await response.json();
-    
       if(responseData.success)
       {
         authPage.classList.remove("active");
@@ -76,8 +76,9 @@ console.log("URL",URL)
           password:password.value
       }),
       headers: {
-        "Content-type": "application/json; charset=UTF-8 Access-Control-Allow-Origin",
-        "Access-Control-Allow-Credentials" :  "true"
+        "Content-type": "application/json; charset=UTF-8",
+        "Access-Control-Allow-Origin": "https://eshan-009.github.io/",
+        "Access-Control-Allow-Credentials" : true,
       }
     })
 if(response.status==200)
@@ -105,13 +106,14 @@ const URL = `${baseUrl}/api/auth/login`
           password:password.value
       }),
       headers: {
-        "Content-type": "application/json; charset=UTF-8 Access-Control-Allow-Origin",
-        "Access-Control-Allow-Credentials" :  "true"
+        "Content-type": "application/json; charset=UTF-8",
+        "Access-Control-Allow-Origin": "https://eshan-009.github.io/",
+        "Access-Control-Allow-Credentials" : true,
        
       },
       credentials: 'include' 
     })
-  
+
 if(response.status==200)
 {
     loginForm.classList.remove("active")
@@ -124,8 +126,11 @@ else{
 }
 email.value = '';
 password.value='';
-const data = await response.json()
-localStorage.setItem("token",JSON.stringify(data.token));
+const data = await response.json();
+if(response.status==200)
+{
+    localStorage.setItem("token",JSON.stringify(data.token));
+}
 
 })
 
@@ -146,8 +151,9 @@ addTodoButton.addEventListener("click",(e)=>{
               dueDate:dueDate.value
           }),
           headers: {
-          "Content-type": "application/json; charset=UTF-8 Access-Control-Allow-Origin",
-        "Access-Control-Allow-Credentials" :  "true",
+          "Content-type": "application/json; charset=UTF-8 ",
+          "Access-Control-Allow-Origin": "https://eshan-009.github.io/",
+          "Access-Control-Allow-Credentials" : true,
             'Authorization': `Bearer ${jwtoken}`, 
           },
           credentials: 'include' 
@@ -253,8 +259,9 @@ else if(currentTab === completedTab)
                       dueDate:dueDate.value
                   }),
                   headers: {
-                    "Content-type": "application/json; charset=UTF-8 Access-Control-Allow-Origin",
-        "Access-Control-Allow-Credentials" :  "true",
+                    "Content-type": "application/json; charset=UTF-8",
+                    "Access-Control-Allow-Origin": "https://eshan-009.github.io/",
+                    "Access-Control-Allow-Credentials" : true,
                     'Authorization': `Bearer ${jwtoken}`, 
                   },
                   credentials: 'include' 
@@ -274,8 +281,9 @@ else if(currentTab === completedTab)
                   method :"DELETE",
                   
                   headers: {
-                 "Content-type": "application/json; charset=UTF-8 Access-Control-Allow-Origin",
-        "Access-Control-Allow-Credentials" :  "true",
+                 "Content-type": "application/json; charset=UTF-8",
+                 "Access-Control-Allow-Origin": "https://eshan-009.github.io/",
+                 "Access-Control-Allow-Credentials" : true,
                     'Authorization': `Bearer ${jwtoken}`, 
                   },
                   credentials: 'include' 
@@ -301,8 +309,9 @@ else if(currentTab === completedTab)
                         completed : true
                     }),
                     headers: {
-                    "Content-type": "application/json; charset=UTF-8 Access-Control-Allow-Origin",
-                      "Access-Control-Allow-Credentials" :  "true",
+                    "Content-type": "application/json; charset=UTF-8",
+                    "Access-Control-Allow-Origin": "https://eshan-009.github.io/",
+                    "Access-Control-Allow-Credentials" : true,
                       'Authorization': `Bearer ${jwtoken}`, 
                     },
                     credentials: 'include' 
