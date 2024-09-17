@@ -353,14 +353,16 @@ else if(currentTab === completedTab)
 const todayTab = document.querySelector("#today")
 const upcomingTab = document.getElementById("upcoming")
 const completedTab = document.getElementById("completed")
-const pendingTab = document.getElementById("pending")
+const pendingTab = document.getElementById("pending");
+
+
 var currentTab=upcomingTab;
 
 currentTab.classList.add("activeTab");
-if(authenticate())
-{
-    getTodos()
-}
+// if(authenticate())
+// {
+//     getTodos()
+// }
 function toggletabs(tab){
 
     console.log(currentTab,tab)
