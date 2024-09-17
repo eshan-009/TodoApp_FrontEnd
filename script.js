@@ -16,7 +16,11 @@ const addTodoPage = document.querySelector(".addTodoPage")
 const jwtoken = localStorage.getItem("token")
 const logOutButton = document.querySelector(".logOutButton");
 const empty = document.querySelector(".empty")
-
+const todayTab = document.querySelector("#today")
+const upcomingTab = document.getElementById("upcoming")
+const completedTab = document.getElementById("completed")
+const pendingTab = document.getElementById("pending");
+var currentTab=upcomingTab;
 createAccount.addEventListener("click",(e)=>{
     e.preventDefault();
     loginForm.classList.remove("active");
@@ -55,6 +59,7 @@ async function authenticate(){
         authPage.classList.remove("active");
         homescreen.classList.add("active");
         logOutButton.classList.add("active");
+        currentTab.classList.add("activeTab");
         await getTodos();
         return true
       }
@@ -134,7 +139,7 @@ const data = await response.json();
 if(response.status==200)
 {
     localStorage.setItem("token",JSON.stringify(data.token));
-    var currentTab=upcomingTab;
+   
 
 currentTab.classList.add("activeTab");
 await getTodos()
@@ -355,10 +360,6 @@ else if(currentTab === completedTab)
 
 
 
-const todayTab = document.querySelector("#today")
-const upcomingTab = document.getElementById("upcoming")
-const completedTab = document.getElementById("completed")
-const pendingTab = document.getElementById("pending");
 
 
 
