@@ -55,7 +55,9 @@ async function authenticate(){
         authPage.classList.remove("active");
         homescreen.classList.add("active");
         logOutButton.classList.add("active")
+        return true
       }
+      return false
    }
 
 registerButton.addEventListener("click",async(e)=>{
@@ -353,8 +355,12 @@ const upcomingTab = document.getElementById("upcoming")
 const completedTab = document.getElementById("completed")
 const pendingTab = document.getElementById("pending")
 var currentTab=upcomingTab;
+
 currentTab.classList.add("activeTab");
-getTodos()
+if(authenticate())
+{
+    getTodos()
+}
 function toggletabs(tab){
 
     console.log(currentTab,tab)
