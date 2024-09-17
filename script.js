@@ -359,10 +359,10 @@ const pendingTab = document.getElementById("pending");
 var currentTab=upcomingTab;
 
 currentTab.classList.add("activeTab");
-// if(authenticate())
-// {
-//     getTodos()
-// }
+if(authenticate())
+{
+    getTodos()
+}
 function toggletabs(tab){
 
     console.log(currentTab,tab)
