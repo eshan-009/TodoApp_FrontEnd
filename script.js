@@ -46,7 +46,8 @@ async function authenticate(){
            "Access-Control-Allow-Credentials" : true,
           'Authorization': `Bearer ${jwtoken}`, 
         },
-        credentials: 'include' 
+        credentials: 'include' ,
+        withCredentials: true
       })
       const responseData = await response.json();
       if(responseData.success)
