@@ -41,7 +41,7 @@ async function authenticate(){
     const response = await fetch(URL,{
         method :"GET",
         headers: {
-           "Content-type": "application/json; charset=UTF-8 ; Access-Control-Allow-Origin",
+           "Content-type": "application/json; charset=UTF-8",
            "Access-Control-Allow-Origin": "https://eshan-009.github.io/",
            "Access-Control-Allow-Credentials" : true,
           'Authorization': `Bearer ${jwtoken}`, 
@@ -80,8 +80,8 @@ console.log("URL",URL)
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8 ; Access-Control-Allow-Origin",
-        "Access-Control-Allow-Origin": "https://eshan-009.github.io/",
-        "Access-Control-Allow-Credentials" : true,
+        // "Access-Control-Allow-Origin": "https://eshan-009.github.io/",
+        // "Access-Control-Allow-Credentials" : true,
       }
     })
 if(response.status==200)
@@ -109,9 +109,9 @@ const URL = `${baseUrl}/api/auth/login`
           password:password.value
       }),
       headers: {
-        "Content-type": "application/json; charset=UTF-8 ; Access-Control-Allow-Origin",
-        "Access-Control-Allow-Origin": "https://eshan-009.github.io/",
-        "Access-Control-Allow-Credentials" : true,
+        "Content-type": "application/json; charset=UTF-8 ",
+        // "Access-Control-Allow-Origin": "https://eshan-009.github.io/",
+        // "Access-Control-Allow-Credentials" : true,
        
       },
       credentials: 'include' 
